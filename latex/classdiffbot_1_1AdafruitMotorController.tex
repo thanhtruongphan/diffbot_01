@@ -1,0 +1,118 @@
+\hypertarget{classdiffbot_1_1AdafruitMotorController}{}\doxysection{diffbot\+::Adafruit\+Motor\+Controller Class Reference}
+\label{classdiffbot_1_1AdafruitMotorController}\index{diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}}
+
+
+Implementation of the \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf}{Motor\+Controller\+Intf}} for the Adafruit\+\_\+\+Motor\+Shield.  
+
+
+
+
+{\ttfamily \#include $<$adafruit\+\_\+feather\+\_\+wing.\+h$>$}
+
+
+
+Inheritance diagram for diffbot\+::Adafruit\+Motor\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classdiffbot_1_1AdafruitMotorController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for diffbot\+::Adafruit\+Motor\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=250pt]{classdiffbot_1_1AdafruitMotorController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdiffbot_1_1AdafruitMotorController_ae09db5a6c20fb234efc4f3feef659c81}{Adafruit\+Motor\+Controller}} (uint8\+\_\+t motor\+\_\+num, uint8\+\_\+t addr=0x60)
+\begin{DoxyCompactList}\small\item\em Construct an \mbox{\hyperlink{classdiffbot_1_1AdafruitMotorController}{Adafruit\+Motor\+Controller}} for a single motor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdiffbot_1_1AdafruitMotorController_acce3c23687982ff7fdb962c00f3b278f}{begin}} (uint16\+\_\+t freq=1600)
+\begin{DoxyCompactList}\small\item\em Initializes the communication with the motor driver. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdiffbot_1_1AdafruitMotorController_a7ad591fb544e445885d48b8461dc9f7c}{set\+Speed}} (int value) override
+\begin{DoxyCompactList}\small\item\em Set the speed of the motor p\+Motor\+\_\+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf}{Motor\+Controller\+Intf}} for the Adafruit\+\_\+\+Motor\+Shield. 
+
+Implements the abstract set\+Speed method from the \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf}{Motor\+Controller\+Intf}}
+
+The class makes use of the adafruit-\/stepper-\/dc-\/motor-\/featherwing library.
+
+\begin{DoxyNote}{Note}
+for more details see \href{https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/library-reference}{\texttt{ https\+://learn.\+adafruit.\+com/adafruit-\/stepper-\/dc-\/motor-\/featherwing/library-\/reference}} 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdiffbot_1_1AdafruitMotorController_ae09db5a6c20fb234efc4f3feef659c81}\label{classdiffbot_1_1AdafruitMotorController_ae09db5a6c20fb234efc4f3feef659c81}} 
+\index{diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}!AdafruitMotorController@{AdafruitMotorController}}
+\index{AdafruitMotorController@{AdafruitMotorController}!diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}}
+\doxysubsubsection{\texorpdfstring{AdafruitMotorController()}{AdafruitMotorController()}}
+{\footnotesize\ttfamily diffbot\+::\+Adafruit\+Motor\+Controller\+::\+Adafruit\+Motor\+Controller (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{motor\+\_\+num,  }\item[{uint8\+\_\+t}]{addr = {\ttfamily 0x60} }\end{DoxyParamCaption})}
+
+
+
+Construct an \mbox{\hyperlink{classdiffbot_1_1AdafruitMotorController}{Adafruit\+Motor\+Controller}} for a single motor. 
+
+Specify the motor to control {\ttfamily motor\+\_\+num} (use 3 or 4 for diffbot). Specify the i2c address to be used. The default address is 0x60 but it can be changed by soldering different address switches on the bottom of the P\+CB.
+
+
+\begin{DoxyParams}{Parameters}
+{\em motor\+\_\+num} & Number of the motor to control (one of 1, 2, 3, 4). Diffbot uses motors 3 and 4. \\
+\hline
+{\em addr} & i2c address used to communicate with the motor driver. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdiffbot_1_1AdafruitMotorController_acce3c23687982ff7fdb962c00f3b278f}\label{classdiffbot_1_1AdafruitMotorController_acce3c23687982ff7fdb962c00f3b278f}} 
+\index{diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}!begin@{begin}}
+\index{begin@{begin}!diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void diffbot\+::\+Adafruit\+Motor\+Controller\+::begin (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{freq = {\ttfamily 1600} }\end{DoxyParamCaption})}
+
+
+
+Initializes the communication with the motor driver. 
+
+must be called in \mbox{\hyperlink{main_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()}} to initialize the shield. An optional frequency parameter can be used to specify something other than the default maximum\+: 1.\+6\+K\+Hz P\+WM frequency. \mbox{\Hypertarget{classdiffbot_1_1AdafruitMotorController_a7ad591fb544e445885d48b8461dc9f7c}\label{classdiffbot_1_1AdafruitMotorController_a7ad591fb544e445885d48b8461dc9f7c}} 
+\index{diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!diffbot::AdafruitMotorController@{diffbot::AdafruitMotorController}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily void diffbot\+::\+Adafruit\+Motor\+Controller\+::set\+Speed (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the speed of the motor p\+Motor\+\_\+. 
+
+Concrete implementation of the set\+Speed interface method to control a single motor connected to the Adafruit\+\_\+\+Motor\+Shield. The input parameter {\ttfamily value} ranges from -\/255 to 255. Inside this method the value is mapped between 0 to 255 and the sign is used to set the direction. A positive {\ttfamily value} results in the motor spinning forward. Negative {\ttfamily value} rotates the motor backward and a zero value stops the motor (releases the current).
+
+\begin{DoxyNote}{Note}
+for more details see \href{https://learn.adafruit.com/adafruit-stepper-dc-motor-featherwing/library-reference}{\texttt{ https\+://learn.\+adafruit.\+com/adafruit-\/stepper-\/dc-\/motor-\/featherwing/library-\/reference}}
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em value} & positive or negative value to set the direction and speed of the motor. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf_aa0e7ffdbb5e4bcb546059ca4a73c9f54}{diffbot\+::\+Motor\+Controller\+Intf$<$ Adafruit\+\_\+\+Motor\+Shield $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+diffbot\+\_\+base/scripts/base\+\_\+controller/lib/motor\+\_\+controllers/adafruit\+\_\+feather\+\_\+wing/\mbox{\hyperlink{adafruit__feather__wing_8h}{adafruit\+\_\+feather\+\_\+wing.\+h}}\item 
+diffbot\+\_\+base/scripts/base\+\_\+controller/lib/motor\+\_\+controllers/adafruit\+\_\+feather\+\_\+wing/\mbox{\hyperlink{adafruit__feather__wing_8cpp}{adafruit\+\_\+feather\+\_\+wing.\+cpp}}\end{DoxyCompactItemize}

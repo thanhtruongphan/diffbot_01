@@ -1,0 +1,6 @@
+<map id="diffbot::BaseController&lt; TMotorController, TMotorDriver &gt;" name="diffbot::BaseController&lt; TMotorController, TMotorDriver &gt;">
+<area shape="rect" id="node1" title="Communicates with the high level hardware_interface::RobotHW and interacts with the robot hardware se..." alt="" coords="763,53,1019,94"/>
+<area shape="rect" id="node2" href="$structdiffbot_1_1BaseController_1_1LastUpdateTime.html" title="Keeps track of the last update times." alt="" coords="348,5,589,61"/>
+<area shape="rect" id="node3" href="$structdiffbot_1_1BaseController_1_1UpdateRate.html" title="Stores update rate frequencies (Hz) for the main control loop, (optinal) imu and debug output." alt="" coords="348,85,589,141"/>
+<area shape="rect" id="node4" href="$structdiffbot_1_1BaseController_1_1UpdateRate_1_1Period.html" title="Inverse of the update rates for control, (optional) imu and debug output." alt="" coords="5,85,247,141"/>
+</map>

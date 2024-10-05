@@ -1,0 +1,90 @@
+\hypertarget{test__adafruit__motorshieldv2_8cpp}{}\doxysection{diffbot\+\_\+base/scripts/base\+\_\+controller/test/adafruit\+\_\+motorshieldv2/test\+\_\+adafruit\+\_\+motorshieldv2.cpp File Reference}
+\label{test__adafruit__motorshieldv2_8cpp}\index{diffbot\_base/scripts/base\_controller/test/adafruit\_motorshieldv2/test\_adafruit\_motorshieldv2.cpp@{diffbot\_base/scripts/base\_controller/test/adafruit\_motorshieldv2/test\_adafruit\_motorshieldv2.cpp}}
+{\ttfamily \#include $<$unity.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+Motor\+Shield.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}diffbot\+\_\+base\+\_\+config.\+h\char`\"{}}\newline
+Include dependency graph for test\+\_\+adafruit\+\_\+motorshieldv2.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{test__adafruit__motorshieldv2_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_ad2509a75c9e3d64b036bc18bde6eecc1}{motor\+Sweep}} (Adafruit\+\_\+\+D\+C\+Motor $\ast$motor)
+\item 
+void \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
+\item 
+void \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Adafruit\+\_\+\+Motor\+Shield \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_a7e8151031cf9a913ec4a28a5f56ed7c0}{A\+F\+MS}} = Adafruit\+\_\+\+Motor\+Shield(\mbox{\hyperlink{diffbot__base__config_8h_af64b563fa9609301c3c598ab41f7c00c}{M\+O\+T\+O\+R\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+A\+D\+DR}})
+\item 
+Adafruit\+\_\+\+D\+C\+Motor $\ast$ \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_a8bd76c33971d22ad4e43dbfa70b75654}{right\+Motor}} = A\+F\+M\+S.\+get\+Motor(\mbox{\hyperlink{diffbot__base__config_8h_a9eff471d17bc68f18b14ff75f23aa3bc}{M\+O\+T\+O\+R\+\_\+\+R\+I\+G\+HT}})
+\item 
+Adafruit\+\_\+\+D\+C\+Motor $\ast$ \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_a33dc63e5ba840c049a432bbc93246657}{left\+Motor}} = A\+F\+M\+S.\+get\+Motor(\mbox{\hyperlink{diffbot__base__config_8h_a0e2d750df9008232cafa398d2424b778}{M\+O\+T\+O\+R\+\_\+\+L\+E\+FT}})
+\item 
+uint8\+\_\+t \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_a43925d437f42c3541f76d1ef391476ca}{cycle}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{test__adafruit__motorshieldv2_8cpp_ab9f79c8305c357f126ba9c2e429d6f6f}{max\+\_\+loop\+\_\+cycles}} = 1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{test__adafruit__motorshieldv2_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!loop@{loop}}
+\index{loop@{loop}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_ad2509a75c9e3d64b036bc18bde6eecc1}\label{test__adafruit__motorshieldv2_8cpp_ad2509a75c9e3d64b036bc18bde6eecc1}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!motorSweep@{motorSweep}}
+\index{motorSweep@{motorSweep}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{motorSweep()}{motorSweep()}}
+{\footnotesize\ttfamily void motor\+Sweep (\begin{DoxyParamCaption}\item[{Adafruit\+\_\+\+D\+C\+Motor $\ast$}]{motor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{test__adafruit__motorshieldv2_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!setup@{setup}}
+\index{setup@{setup}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{setup()}{setup()}}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_a7e8151031cf9a913ec4a28a5f56ed7c0}\label{test__adafruit__motorshieldv2_8cpp_a7e8151031cf9a913ec4a28a5f56ed7c0}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!AFMS@{AFMS}}
+\index{AFMS@{AFMS}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{AFMS}{AFMS}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+Motor\+Shield A\+F\+MS = Adafruit\+\_\+\+Motor\+Shield(\mbox{\hyperlink{diffbot__base__config_8h_af64b563fa9609301c3c598ab41f7c00c}{M\+O\+T\+O\+R\+\_\+\+D\+R\+I\+V\+E\+R\+\_\+\+A\+D\+DR}})}
+
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_a43925d437f42c3541f76d1ef391476ca}\label{test__adafruit__motorshieldv2_8cpp_a43925d437f42c3541f76d1ef391476ca}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!cycle@{cycle}}
+\index{cycle@{cycle}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{cycle}{cycle}}
+{\footnotesize\ttfamily uint8\+\_\+t cycle = 0}
+
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_a33dc63e5ba840c049a432bbc93246657}\label{test__adafruit__motorshieldv2_8cpp_a33dc63e5ba840c049a432bbc93246657}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!leftMotor@{leftMotor}}
+\index{leftMotor@{leftMotor}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{leftMotor}{leftMotor}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+D\+C\+Motor$\ast$ left\+Motor = A\+F\+M\+S.\+get\+Motor(\mbox{\hyperlink{diffbot__base__config_8h_a0e2d750df9008232cafa398d2424b778}{M\+O\+T\+O\+R\+\_\+\+L\+E\+FT}})}
+
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_ab9f79c8305c357f126ba9c2e429d6f6f}\label{test__adafruit__motorshieldv2_8cpp_ab9f79c8305c357f126ba9c2e429d6f6f}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!max\_loop\_cycles@{max\_loop\_cycles}}
+\index{max\_loop\_cycles@{max\_loop\_cycles}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{max\_loop\_cycles}{max\_loop\_cycles}}
+{\footnotesize\ttfamily uint8\+\_\+t max\+\_\+loop\+\_\+cycles = 1}
+
+\mbox{\Hypertarget{test__adafruit__motorshieldv2_8cpp_a8bd76c33971d22ad4e43dbfa70b75654}\label{test__adafruit__motorshieldv2_8cpp_a8bd76c33971d22ad4e43dbfa70b75654}} 
+\index{test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}!rightMotor@{rightMotor}}
+\index{rightMotor@{rightMotor}!test\_adafruit\_motorshieldv2.cpp@{test\_adafruit\_motorshieldv2.cpp}}
+\doxysubsubsection{\texorpdfstring{rightMotor}{rightMotor}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+D\+C\+Motor$\ast$ right\+Motor = A\+F\+M\+S.\+get\+Motor(\mbox{\hyperlink{diffbot__base__config_8h_a9eff471d17bc68f18b14ff75f23aa3bc}{M\+O\+T\+O\+R\+\_\+\+R\+I\+G\+HT}})}
+

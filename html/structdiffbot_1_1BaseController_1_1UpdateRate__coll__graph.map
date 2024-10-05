@@ -1,0 +1,4 @@
+<map id="diffbot::BaseController&lt; TMotorController, TMotorDriver &gt;::UpdateRate" name="diffbot::BaseController&lt; TMotorController, TMotorDriver &gt;::UpdateRate">
+<area shape="rect" id="node1" title="Stores update rate frequencies (Hz) for the main control loop, (optinal) imu and debug output." alt="" coords="5,124,247,180"/>
+<area shape="rect" id="node2" href="$structdiffbot_1_1BaseController_1_1UpdateRate_1_1Period.html" title="Inverse of the update rates for control, (optional) imu and debug output." alt="" coords="5,5,247,61"/>
+</map>

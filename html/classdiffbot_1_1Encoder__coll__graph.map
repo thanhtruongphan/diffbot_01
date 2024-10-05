@@ -1,0 +1,4 @@
+<map id="diffbot::Encoder" name="diffbot::Encoder">
+<area shape="rect" id="node1" title="Decorates the Teensy Encoder Library to read the angular wheel velocity from quadrature wheel encoder..." alt="" coords="11,95,136,121"/>
+<area shape="rect" id="node2" href="$structdiffbot_1_1JointState.html" title=" " alt="" coords="5,5,141,32"/>
+</map>

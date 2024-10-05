@@ -1,0 +1,7 @@
+<map id="diffbot_base::DiffBotHWInterface" name="diffbot_base::DiffBotHWInterface">
+<area shape="rect" id="node1" title="Hardware interface for a robot." alt="" coords="145,185,384,212"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,81,153,123"/>
+<area shape="rect" id="node3" href="$structdiffbot__base_1_1JointState.html" title=" " alt="" coords="177,89,352,115"/>
+<area shape="rect" id="node4" href="$classdiffbot__base_1_1PID.html" title=" " alt="" coords="389,89,522,115"/>
+<area shape="rect" id="node5" title=" " alt="" coords="380,5,531,32"/>
+</map>

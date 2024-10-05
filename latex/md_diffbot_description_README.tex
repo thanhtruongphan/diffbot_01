@@ -1,0 +1,70 @@
+\href{https://fjp.at/projects/diffbot/ros-packages/robot-description/}{\texttt{ Package documentation}}
+
+Version controlled source is managed in this fork\+: \href{https://github.com/fjp/mobile_robot_description/tree/diffbot}{\texttt{ fjp/mobile\+\_\+robot\+\_\+description (diffbot branch)}}\hypertarget{md_diffbot_description_README_autotoc_md3}{}\doxysection{mobile\+\_\+robot\+\_\+description}\label{md_diffbot_description_README_autotoc_md3}
+R\+OS Package with a modular structure to create mobile robots with differential drive configuration. The purpose of this package is to provide xacro modules to make it easier to build the U\+R\+DF description file of your differential robot. To active this purpose, this package has some modules that are inside the file {\itshape {\bfseries{common\+\_\+macro.\+urdf.\+xacro}}} that can be parametrized using Y\+A\+ML files, making it easier, fast, and more flexible to create your robot model.
+
+ ~\newline
+ 
+
+
+\begin{DoxyItemize}
+\item \href{\#Package-Organization}{\texttt{ Package Organization}}
+\item \href{\#Installation}{\texttt{ Installation}}
+\item \href{\#Usage}{\texttt{ Usage}}
+\item \href{\#Contributing}{\texttt{ Contributing}}
+\end{DoxyItemize}\hypertarget{md_diffbot_description_README_autotoc_md4}{}\doxysubsection{Package Organization}\label{md_diffbot_description_README_autotoc_md4}
+This project has the following folder structure.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{config\+:}} Folder to place the config files with the parameters of the parts of the robot and also some config files to the R\+V\+IZ.
+\begin{DoxyItemize}
+\item {\itshape sub-\/folder\+:} The config files to a specific project should be placed in a sub-\/folder in order to make it possible to have different models in the same project.
+\end{DoxyItemize}
+\item {\bfseries{launch\+:}} Folder with the launch files for the robots.
+\item {\bfseries{meshes\+:}} Folder to place the mesh files for the links of the robot. These meshes files will be used {\bfseries{only}} as visual. The collision of the links is set as basic shapes to reduce the computational cost as the Gazebo tutorial suggests.
+\begin{DoxyItemize}
+\item {\itshape sub-\/folder\+:} The specific mesh files of each project should be placed in the sub-\/folder with the name of the project.
+\end{DoxyItemize}
+\item {\bfseries{rviz\+:}} Folder with the R\+V\+IZ configuration for the robot.
+\item {\bfseries{urdf\+:}} Folder with the U\+R\+DF and xacro files.
+\begin{DoxyItemize}
+\item {\itshape {\bfseries{include\+:}}} Folder with the common module files, similar to the Libs.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_diffbot_description_README_autotoc_md5}{}\doxysubsection{Installation}\label{md_diffbot_description_README_autotoc_md5}
+To install this package, just clone it inside your R\+OS workspace, running\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ git clone https://github.com/pxalcantara/mobile\_robot\_description.git }
+\end{DoxyCode}
+\hypertarget{md_diffbot_description_README_autotoc_md6}{}\doxysubsection{Usage}\label{md_diffbot_description_README_autotoc_md6}
+The basic modules of this package are inside the file {\itshape {\bfseries{common\+\_\+macro.\+urdf.\+xacro}}} that is at {\itshape urdf/include} folder as described above. This file work as a library and you can add it to your robot description like \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/mobile_robot.urdf.xacro\#L7}{\texttt{ this}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<\textcolor{keywordtype}{xacro:include} \textcolor{keyword}{filename}=\textcolor{stringliteral}{"\$(find \$\{package\_name\})/urdf/include/common\_macros.urdf.xacro"} />}
+\end{DoxyCode}
+
+
+⚠️ Note that in the command above, the {\ttfamily package\+\_\+name} is set as a variable so to use this command you must have been set the package\+\_\+name variable with the name of your project.
+
+⚠️ {\bfseries{I\+M\+P\+O\+R\+T\+A\+N\+T! Before using the modules of the common\+\_\+macro files, you M\+U\+ST set a xacro property {\ttfamily package\+\_\+name} with the name of your project and the xacro property {\ttfamily robot\+\_\+name} with the name that you choose for your robot. This name should be the same as the folder where you organize the config and mesh files. It can be seen in the \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/mobile_robot.urdf.xacro\#L4}{\texttt{ mobile\+\_\+robot}}, \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/quimera_robot.urdf.xacro\#L4}{\texttt{ quimera\+\_\+robot}} and \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/diffbot.urdf.xacro\#L4}{\texttt{ diffbot}}. In case of change the name of the package, as it is a template repository, the value of this variable M\+U\+ST be updated with the name that you choose. Setting this property globally on the robot file makes the path for the config and mesh files correct, because it is made \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L76}{\texttt{ relatively}}.}}
+
+In the {\itshape {\bfseries{common\+\_\+macro.\+urdf.\+xacro}}}, there is the xacro modules\+:
+\begin{DoxyItemize}
+\item {\bfseries{\href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L278}{\texttt{ Color properties}}\+:}} The color reference that appears on R\+V\+IZ.
+\item {\bfseries{Basic shape inertia\+:}}
+\begin{DoxyItemize}
+\item \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L264}{\texttt{ sphere\+\_\+inertia}};
+\item \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L255}{\texttt{ box\+\_\+inertia}};
+\item \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L247}{\texttt{ cylinder\+\_\+intertia}};
+\item \href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L271}{\texttt{ default\+\_\+intertia}};
+\end{DoxyItemize}
+\item {\bfseries{\href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L206}{\texttt{ Base link}}\+:}} A macro to add a base link that can be parametrized using Y\+A\+ML file. The {\ttfamily collision} of this link has a box shape and the {\ttfamily visual} can have a basic shape or use a mesh.
+\item {\bfseries{\href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L9}{\texttt{ Wheel}}\+:}} A macro to add the wheel link, joint and transmission. This macro can be parametrized using Y\+A\+ML file. The {\ttfamily collision} has the cylinder shape and the {\ttfamily visual} can have a basic cylinder shape or a mesh.
+\item {\bfseries{\href{https://github.com/pxalcantara/mobile_robot_description/blob/48819dcec6f897b7d02e8d4aa6c66d803ddf6239/urdf/include/common_macros.urdf.xacro\#L58}{\texttt{ Caster\+\_\+wheel}}\+:}} A macro to add a caster wheel link and joints. The caster\+\_\+wheel only has passive joints, there is no {\ttfamily transmission} tag. This macro can be parametrized using Y\+A\+ML file. The {\ttfamily collision} has basic shapes and the {\ttfamily visual} can have a basic shapes or meshes.
+\end{DoxyItemize}
+
+For more detailed information about the xacro modules or about the usage, see the \href{https://github.com/pxalcantara/mobile_robot_description/wiki}{\texttt{ Wiki}}\hypertarget{md_diffbot_description_README_autotoc_md7}{}\doxysubsection{Contributing}\label{md_diffbot_description_README_autotoc_md7}
+If you have any comments, doubts, or suggestions, I\textquotesingle{}ll be more than happy to know them, so, feel free to open an issue or a Pull Request with your collaboration. 

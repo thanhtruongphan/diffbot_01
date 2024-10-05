@@ -1,0 +1,69 @@
+\hypertarget{classdiffbot_1_1MotorControllerIntf}{}\doxysection{diffbot\+::Motor\+Controller\+Intf$<$ T\+Motor\+Driver $>$ Class Template Reference}
+\label{classdiffbot_1_1MotorControllerIntf}\index{diffbot::MotorControllerIntf$<$ TMotorDriver $>$@{diffbot::MotorControllerIntf$<$ TMotorDriver $>$}}
+
+
+Abstract base interface class for a motor controller.  
+
+
+
+
+{\ttfamily \#include $<$motor\+\_\+controller\+\_\+interface.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf_aa0e7ffdbb5e4bcb546059ca4a73c9f54}{set\+Speed}} (int value)=0
+\begin{DoxyCompactList}\small\item\em Set the speed of the a motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Motor\+Driver \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf_a4e8d82aa87e531d1de5ba6d71be744ee}{motor\+\_\+driver\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T\+Motor\+Driver$>$\newline
+class diffbot\+::\+Motor\+Controller\+Intf$<$ T\+Motor\+Driver $>$}
+
+Abstract base interface class for a motor controller. 
+
+Inherit from this base class and specify the type of motor driver. The interface provides \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf_aa0e7ffdbb5e4bcb546059ca4a73c9f54}{set\+Speed}}, which is an abstract method and must therefore be implemented. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdiffbot_1_1MotorControllerIntf_aa0e7ffdbb5e4bcb546059ca4a73c9f54}\label{classdiffbot_1_1MotorControllerIntf_aa0e7ffdbb5e4bcb546059ca4a73c9f54}} 
+\index{diffbot::MotorControllerIntf$<$ TMotorDriver $>$@{diffbot::MotorControllerIntf$<$ TMotorDriver $>$}!setSpeed@{setSpeed}}
+\index{setSpeed@{setSpeed}!diffbot::MotorControllerIntf$<$ TMotorDriver $>$@{diffbot::MotorControllerIntf$<$ TMotorDriver $>$}}
+\doxysubsubsection{\texorpdfstring{setSpeed()}{setSpeed()}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Driver $>$ \\
+virtual void \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf}{diffbot\+::\+Motor\+Controller\+Intf}}$<$ T\+Motor\+Driver $>$\+::set\+Speed (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the speed of the a motor. 
+
+Implement this method to set the speed of a motor that is connected to the \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf_a4e8d82aa87e531d1de5ba6d71be744ee}{motor\+\_\+driver\+\_\+}} which is of type T\+Motor\+Driver.
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & positive or negative value to set the direction and speed of the motor. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classdiffbot_1_1AdafruitMotorController_a7ad591fb544e445885d48b8461dc9f7c}{diffbot\+::\+Adafruit\+Motor\+Controller}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdiffbot_1_1MotorControllerIntf_a4e8d82aa87e531d1de5ba6d71be744ee}\label{classdiffbot_1_1MotorControllerIntf_a4e8d82aa87e531d1de5ba6d71be744ee}} 
+\index{diffbot::MotorControllerIntf$<$ TMotorDriver $>$@{diffbot::MotorControllerIntf$<$ TMotorDriver $>$}!motor\_driver\_@{motor\_driver\_}}
+\index{motor\_driver\_@{motor\_driver\_}!diffbot::MotorControllerIntf$<$ TMotorDriver $>$@{diffbot::MotorControllerIntf$<$ TMotorDriver $>$}}
+\doxysubsubsection{\texorpdfstring{motor\_driver\_}{motor\_driver\_}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Driver $>$ \\
+T\+Motor\+Driver \mbox{\hyperlink{classdiffbot_1_1MotorControllerIntf}{diffbot\+::\+Motor\+Controller\+Intf}}$<$ T\+Motor\+Driver $>$\+::motor\+\_\+driver\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffbot\+\_\+base/scripts/base\+\_\+controller/lib/motor\+\_\+controller\+\_\+interface/\mbox{\hyperlink{motor__controller__interface_8h}{motor\+\_\+controller\+\_\+interface.\+h}}\end{DoxyCompactItemize}

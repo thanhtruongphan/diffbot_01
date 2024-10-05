@@ -1,0 +1,92 @@
+\hypertarget{structdiffbot_1_1BaseController_1_1LastUpdateTime}{}\doxysection{diffbot\+::Base\+Controller$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::Last\+Update\+Time Struct Reference}
+\label{structdiffbot_1_1BaseController_1_1LastUpdateTime}\index{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}}
+
+
+Keeps track of the last update times.  
+
+
+
+
+{\ttfamily \#include $<$base\+\_\+controller.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structdiffbot_1_1BaseController_1_1LastUpdateTime_aaa05a5efb43e892c1bc1614344cce952}{Last\+Update\+Time}} (ros\+::\+Time start)
+\begin{DoxyCompactList}\small\item\em Construct a new Last Update Time object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Time \mbox{\hyperlink{structdiffbot_1_1BaseController_1_1LastUpdateTime_a315c93513da94a16a851685704014861}{command\+\_\+received}}
+\item 
+ros\+::\+Time \mbox{\hyperlink{structdiffbot_1_1BaseController_1_1LastUpdateTime_a16aa742c7b6e982e0919fa1631104047}{control}}
+\item 
+ros\+::\+Time \mbox{\hyperlink{structdiffbot_1_1BaseController_1_1LastUpdateTime_acf4ae0e5dc8af245bbec62161d71d7ba}{imu}}
+\item 
+ros\+::\+Time \mbox{\hyperlink{structdiffbot_1_1BaseController_1_1LastUpdateTime_a7a8f48dde436f62fc40b6698a5bb0167}{debug}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T\+Motor\+Controller, typename T\+Motor\+Driver$>$\newline
+struct diffbot\+::\+Base\+Controller$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::\+Last\+Update\+Time}
+
+Keeps track of the last update times. 
+
+Inside the \mbox{\hyperlink{main_8cpp}{main.\+cpp}} the members of this \mbox{\hyperlink{classdiffbot_1_1BaseController_a1387b4e876fabe7bee2651f7bde4056e}{last\+\_\+update\+\_\+time\+\_\+}} are updated everytime the corresponding event happens. This is used together with the \mbox{\hyperlink{classdiffbot_1_1BaseController_a0dad88e3a39fd4a5cfa83eef522fa948}{update\+\_\+rate\+\_\+}} to check if enough time elapsed for a new update. For example reading new values from the encoders and writing the received motor commands. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdiffbot_1_1BaseController_1_1LastUpdateTime_aaa05a5efb43e892c1bc1614344cce952}\label{structdiffbot_1_1BaseController_1_1LastUpdateTime_aaa05a5efb43e892c1bc1614344cce952}} 
+\index{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}!LastUpdateTime@{LastUpdateTime}}
+\index{LastUpdateTime@{LastUpdateTime}!diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}}
+\doxysubsubsection{\texorpdfstring{LastUpdateTime()}{LastUpdateTime()}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Controller , typename T\+Motor\+Driver $>$ \\
+\mbox{\hyperlink{classdiffbot_1_1BaseController}{diffbot\+::\+Base\+Controller}}$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::Last\+Update\+Time\+::\+Last\+Update\+Time (\begin{DoxyParamCaption}\item[{ros\+::\+Time}]{start }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Last Update Time object. 
+
+This object is initialized with the current time using the ros\+::\+Node\+Handle\+::now() method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & Start time of the program \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structdiffbot_1_1BaseController_1_1LastUpdateTime_a315c93513da94a16a851685704014861}\label{structdiffbot_1_1BaseController_1_1LastUpdateTime_a315c93513da94a16a851685704014861}} 
+\index{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}!command\_received@{command\_received}}
+\index{command\_received@{command\_received}!diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}}
+\doxysubsubsection{\texorpdfstring{command\_received}{command\_received}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Controller , typename T\+Motor\+Driver $>$ \\
+ros\+::\+Time \mbox{\hyperlink{classdiffbot_1_1BaseController}{diffbot\+::\+Base\+Controller}}$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::Last\+Update\+Time\+::command\+\_\+received}
+
+\mbox{\Hypertarget{structdiffbot_1_1BaseController_1_1LastUpdateTime_a16aa742c7b6e982e0919fa1631104047}\label{structdiffbot_1_1BaseController_1_1LastUpdateTime_a16aa742c7b6e982e0919fa1631104047}} 
+\index{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}!control@{control}}
+\index{control@{control}!diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}}
+\doxysubsubsection{\texorpdfstring{control}{control}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Controller , typename T\+Motor\+Driver $>$ \\
+ros\+::\+Time \mbox{\hyperlink{classdiffbot_1_1BaseController}{diffbot\+::\+Base\+Controller}}$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::Last\+Update\+Time\+::control}
+
+\mbox{\Hypertarget{structdiffbot_1_1BaseController_1_1LastUpdateTime_a7a8f48dde436f62fc40b6698a5bb0167}\label{structdiffbot_1_1BaseController_1_1LastUpdateTime_a7a8f48dde436f62fc40b6698a5bb0167}} 
+\index{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}!debug@{debug}}
+\index{debug@{debug}!diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}}
+\doxysubsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Controller , typename T\+Motor\+Driver $>$ \\
+ros\+::\+Time \mbox{\hyperlink{classdiffbot_1_1BaseController}{diffbot\+::\+Base\+Controller}}$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::Last\+Update\+Time\+::debug}
+
+\mbox{\Hypertarget{structdiffbot_1_1BaseController_1_1LastUpdateTime_acf4ae0e5dc8af245bbec62161d71d7ba}\label{structdiffbot_1_1BaseController_1_1LastUpdateTime_acf4ae0e5dc8af245bbec62161d71d7ba}} 
+\index{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}!imu@{imu}}
+\index{imu@{imu}!diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime@{diffbot::BaseController$<$ TMotorController, TMotorDriver $>$::LastUpdateTime}}
+\doxysubsubsection{\texorpdfstring{imu}{imu}}
+{\footnotesize\ttfamily template$<$typename T\+Motor\+Controller , typename T\+Motor\+Driver $>$ \\
+ros\+::\+Time \mbox{\hyperlink{classdiffbot_1_1BaseController}{diffbot\+::\+Base\+Controller}}$<$ T\+Motor\+Controller, T\+Motor\+Driver $>$\+::Last\+Update\+Time\+::imu}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+diffbot\+\_\+base/scripts/base\+\_\+controller/lib/base\+\_\+controller/\mbox{\hyperlink{base__controller_8h}{base\+\_\+controller.\+h}}\end{DoxyCompactItemize}

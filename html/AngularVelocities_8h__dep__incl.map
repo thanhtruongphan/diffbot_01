@@ -1,0 +1,11 @@
+<map id="diffbot_base/scripts/base_controller/lib/ros_lib/diffbot_msgs/AngularVelocities.h" name="diffbot_base/scripts/base_controller/lib/ros_lib/diffbot_msgs/AngularVelocities.h">
+<area shape="rect" id="node1" title=" " alt="" coords="69,5,228,76"/>
+<area shape="rect" id="node2" href="$base__controller_8h.html" title=" " alt="" coords="5,361,167,432"/>
+<area shape="rect" id="node4" href="$AngularVelocitiesStamped_8h.html" title=" " alt="" coords="261,243,471,313"/>
+<area shape="rect" id="node8" href="$WheelsCmd_8h.html" title=" " alt="" coords="69,124,228,195"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title=" " alt="" coords="11,480,161,536"/>
+<area shape="rect" id="node5" href="$diffbot__hw__interface_8h.html" title=" " alt="" coords="265,369,419,425"/>
+<area shape="rect" id="node6" href="$diffbot__base_8cpp.html" title=" " alt="" coords="430,487,603,529"/>
+<area shape="rect" id="node7" href="$diffbot__hw__interface_8cpp.html" title=" " alt="" coords="233,487,406,529"/>
+<area shape="rect" id="node9" href="$WheelsCmdStamped_8h.html" title=" " alt="" coords="61,243,236,313"/>
+</map>

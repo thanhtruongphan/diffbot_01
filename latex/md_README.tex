@@ -1,0 +1,459 @@
+{\bfseries{Diff\+Bot}}
+
+ \href{https://github.com/ros-mobile-robots/ros-mobile-robots.github.io/actions/workflows/ci.yml}{\texttt{ }}
+
+Diff\+Bot is an autonomous differential drive robot with two wheels. Its main processing unit is a Raspberry Pi 4 B running Ubuntu Mate 20.\+04 and the R\+OS 1 (R\+OS Noetic) middleware. This respository contains R\+OS driver packages, R\+OS Control Hardware Interface for the real robot and configurations for simulating Diff\+Bot. The formatted documentation can be found at\+: \href{https://ros-mobile-robots.com}{\texttt{ https\+://ros-\/mobile-\/robots.\+com}}.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Diff\+Bot }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Lidar S\+L\+A\+M\+T\+EC R\+P\+Lidar A2  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Diff\+Bot }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Lidar S\+L\+A\+M\+T\+EC R\+P\+Lidar A2  }\\\cline{1-2}
+\endhead
+\PBS\centering \href{https://youtu.be/IcYkQyzUqik}{\texttt{ }} &\PBS\centering \href{https://fjp.at/projects/diffbot/}{\texttt{ }}  \\\cline{1-2}
+\end{longtabu}
+
+
+If you are looking for a 3D printable modular base, see the \href{https://github.com/ros-mobile-robots/remo_description}{\texttt{ {\ttfamily remo\+\_\+description}}} repository. You can use it directly with the software of this {\ttfamily diffbot} repository.
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remo }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Gazebo Simulation }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R\+Viz  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Remo }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Gazebo Simulation }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ R\+Viz  }\\\cline{1-3}
+\endhead
+\PBS\centering \href{https://youtu.be/IcYkQyzUqik}{\texttt{ }} &\PBS\centering \href{https://github.com/fjp/diffbot}{\texttt{ }} &\PBS\centering \href{https://github.com/ros-mobile-robots/diffbot}{\texttt{ }}  \\\cline{1-3}
+\end{longtabu}
+
+
+It provides mounts for different camera modules, such as Raspi Cam v2, O\+A\+K-\/1, O\+A\+K-\/D and you can even design your own if you like. There is also support for different single board computers (Raspberry Pi and Nvidia Jetson Nano) through two changable decks. You are agin free to create your own.\hypertarget{md_README_autotoc_md21}{}\doxysection{Demonstration}\label{md_README_autotoc_md21}
+\hypertarget{md_README_autotoc_md22}{}\doxysubsection{S\+L\+A\+M and Navigation}\label{md_README_autotoc_md22}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Real robot }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Gazebo Simulation  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Real robot }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Gazebo Simulation  }\\\cline{1-2}
+\endhead
+\PBS\centering \href{https://youtu.be/IcYkQyzUqik}{\texttt{ }} &\PBS\centering \href{https://youtu.be/gLlo5V-BZu0}{\texttt{ }} \href{https://youtu.be/2SwFTrJ1Ofg}{\texttt{ }}  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md23}{}\doxysection{\+:package\+: Package Overview}\label{md_README_autotoc_md23}
+
+\begin{DoxyItemize}
+\item \href{./diffbot_base}{\texttt{ {\ttfamily diffbot\+\_\+base}}}\+: R\+OS Control hardware interface including \href{http://wiki.ros.org/controller_manager}{\texttt{ {\ttfamily controller\+\_\+manager}}} control loop for the real robot. The \href{./diffbot_base/scripts}{\texttt{ {\ttfamily scripts} folder}} of this package contains the low-\/level {\ttfamily base\+\_\+controller} that is running on the Teensy microcontroller.
+\item \href{./diffbot_bringup}{\texttt{ {\ttfamily diffbot\+\_\+bringup}}}\+: Launch files to bring up the hardware drivers (camera, lidar, imu, ultrasonic, ...) for the real Diff\+Bot robot.
+\item \href{./diffbot_control}{\texttt{ {\ttfamily diffbot\+\_\+control}}}\+: Configurations for the \href{http://wiki.ros.org/diff_drive_controller}{\texttt{ {\ttfamily diff\+\_\+drive\+\_\+controller}}} of R\+OS Control used in Gazebo simulation and the real robot.
+\item \href{./diffbot_description}{\texttt{ {\ttfamily diffbot\+\_\+description}}}\+: U\+R\+DF description of Diff\+Bot including its sensors.
+\item \href{./diffbot_gazebo}{\texttt{ {\ttfamily diffbot\+\_\+gazebo}}}\+: Simulation specific launch and configuration files for Diff\+Bot.
+\item \href{./diffbot_msgs}{\texttt{ {\ttfamily diffbot\+\_\+msgs}}}\+: Message definitions specific to Diff\+Bot, for example the message for encoder data.
+\item \href{./diffbot_navigation}{\texttt{ {\ttfamily diffbot\+\_\+navigation}}}\+: Navigation based on \href{http://wiki.ros.org/move_base}{\texttt{ {\ttfamily move\+\_\+base} package}}; launch and configuration files.
+\item \href{./diffbot_slam}{\texttt{ {\ttfamily diffbot\+\_\+slam}}}\+: Simultaneous localization and mapping using different implementations (e.\+g., \href{http://wiki.ros.org/gmapping}{\texttt{ gmapping}}) to create a map of the environment
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md24}{}\doxysection{Installation}\label{md_README_autotoc_md24}
+The packages are written for and tested with \href{http://wiki.ros.org/noetic}{\texttt{ R\+OS 1 Noetic}} on \href{https://releases.ubuntu.com/20.04/}{\texttt{ Ubuntu 20.\+04 Focal Fossa}}. For the real robot \href{https://ubuntu-mate.org/download/arm64/focal/}{\texttt{ Ubuntu Mate 20.\+04}} for arm64 is installed on the \href{https://www.raspberrypi.org/products/raspberry-pi-4-model-b/}{\texttt{ Raspberry Pi 4 B}} with 4GB. The communication between the mobile robot and the work pc is done by configuring the \href{http://wiki.ros.org/ROS/NetworkSetup}{\texttt{ R\+OS Network}}, see also the documentation.\hypertarget{md_README_autotoc_md25}{}\doxysubsection{Dependencies}\label{md_README_autotoc_md25}
+The required Ubuntu packages are listed in software package sections found in the \href{https://ros-mobile-robots.com/packages/packages-setup/\#obtain-system-dependencies}{\texttt{ documentation}}. Other R\+OS catkin packages such as \href{https://github.com/Slamtec/rplidar_ros}{\texttt{ {\ttfamily rplidar\+\_\+ros}}} need to be cloned into the catkin workspace.
+
+For an automated and simplified dependency installation process install the \href{https://github.com/dirk-thomas/vcstool}{\texttt{ {\ttfamily vcstool}}}, which is used in the next steps.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install python3-\/vcstool}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md26}{}\doxysubsection{\+:hammer\+: How to Build}\label{md_README_autotoc_md26}
+To build the packages in this repository including the Remo robot follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily cd} into an existing R\+OS Noetic \href{http://wiki.ros.org/catkin/Tutorials/create_a_workspace}{\texttt{ catkin workspace}} or create a new one\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir -\/p catkin\_ws/src}
+\end{DoxyCode}
+
+\item Clone this repository in the {\ttfamily src} folder of your R\+OS Noetic catkin workspace\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd catkin\_ws/src}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/fjp/diffbot.git}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Execute the {\ttfamily vcs import} command from the root of the catkin workspace and pipe in the {\ttfamily diffbot\+\_\+dev.\+repos} or {\ttfamily remo\+\_\+robot.\+repos} Y\+A\+ML file, depending on where you execute the command, either the development PC or the S\+BC of Remo to clone the listed dependencies. Run the following command only on your development machine\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vcs import < src/diffbot/diffbot\_dev.repos}
+\end{DoxyCode}
+
+
+Run the next command on Remo robot\textquotesingle{}s S\+BC\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vcs import < src/diffbot/remo\_robot.repos}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Install the requried binary dependencies of all packages in the catkin workspace using the following \href{http://wiki.ros.org/rosdep\#Install_dependency_of_all_packages_in_the_workspace}{\texttt{ {\ttfamily rosdep} command}}\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosdep install -\/-\/from-\/paths src -\/-\/ignore-\/src -\/r -\/y}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item After installing the required dependencies build the catkin workspace, either with \href{http://wiki.ros.org/catkin/commands/catkin_make}{\texttt{ {\ttfamily catkin\+\_\+make}}}\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{catkin\_ws\$ catkin\_make}
+\end{DoxyCode}
+
+
+or using \href{https://catkin-tools.readthedocs.io/en/latest/}{\texttt{ catkin-\/tools}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{catkin\_ws\$ catkin build}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Finally, source the newly built packages with the {\ttfamily devel/setup.$\ast$} script, depending on your used shell\+:
+
+For bash use\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{catkin\_ws\$ source devel/setup.bash}
+\end{DoxyCode}
+
+
+For zsh use\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{catkin\_ws\$ source devel/setup.zsh}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md27}{}\doxysection{Usage}\label{md_README_autotoc_md27}
+The following sections describe how to run the robot simulation and how to make use of the real hardware using the available package launch files.\hypertarget{md_README_autotoc_md28}{}\doxysubsection{Gazebo Simulation with R\+O\+S Control}\label{md_README_autotoc_md28}
+Control the robot inside Gazebo and view what it sees in R\+Viz using the following launch file\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_control diffbot.launch}
+\end{DoxyCode}
+
+
+This will launch the default diffbot world {\ttfamily db\+\_\+world.\+world}.
+
+To run the \href{https://github.com/ROBOTIS-GIT/turtlebot3_simulations/tree/master/turtlebot3_gazebo/models/turtlebot3_world}{\texttt{ turtlebot3\+\_\+world}} make sure to download it to your {\ttfamily $\sim$/.gazebo/models/} folder, because the {\ttfamily turtlebot3\+\_\+world.\+world} file references the {\ttfamily turtlebot3\+\_\+world} model. After that you can run it with the following command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_control diffbot.launch world\_name:='\$(find diffbot\_gazebo)/worlds/turtlebot3\_world.world'}
+\end{DoxyCode}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily db\+\_\+world.\+world} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily turtlebot3\+\_\+world.\+world}  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily db\+\_\+world.\+world} }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ {\ttfamily turtlebot3\+\_\+world.\+world}  }\\\cline{1-2}
+\endhead
+\PBS\centering  &\PBS\centering   \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md29}{}\doxysubsubsection{Navigation}\label{md_README_autotoc_md29}
+To navigate the robot in the Gazebo simulator in {\ttfamily db\+\_\+world.\+world} run the command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_navigation diffbot.launch}
+\end{DoxyCode}
+
+
+This uses a previously mapped map of {\ttfamily db\+\_\+world.\+world} (found in \href{./diffbot_navigation/maps/}{\texttt{ {\ttfamily diffbot\+\_\+navigation/maps}}}) that is served by the \href{http://wiki.ros.org/map_server}{\texttt{ {\ttfamily map\+\_\+server}}}. With this you can use the \href{http://wiki.ros.org/navigation/Tutorials/Using\%20rviz\%20with\%20the\%20Navigation\%20Stack\#A2D_Nav_Goal}{\texttt{ 2D Nav Goal in R\+Viz}} directly to let the robot drive autonomously in the {\ttfamily db\+\_\+world.\+world}.
+
+\href{https://youtu.be/2SwFTrJ1Ofg}{\texttt{ }}
+
+To run the {\ttfamily turtlebot3\+\_\+world.\+world} (or your own stored world and map) use the same {\ttfamily diffbot\+\_\+navigation/launch/diffbot.\+launch} file but change the {\ttfamily world\+\_\+name} and {\ttfamily map\+\_\+file} arguments to your desired world and map yaml files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_navigation diffbot.launch world\_name:='\$(find diffbot\_gazebo)/worlds/turtlebot3\_world.world' map\_file:='\$(find diffbot\_navigation)/maps/map.yaml'}
+\end{DoxyCode}
+
+
+\href{https://youtu.be/2SwFTrJ1Ofg}{\texttt{ }}\hypertarget{md_README_autotoc_md30}{}\doxysubsubsection{S\+L\+AM}\label{md_README_autotoc_md30}
+To map a new simulated environment using slam gmapping, first run
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_gazebo diffbot.launch world\_name:='\$(find diffbot\_gazebo)/worlds/turtlebot3\_world.world'}
+\end{DoxyCode}
+
+
+and in a second terminal execute
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_slam diffbot\_slam.launch slam\_method:=gmapping}
+\end{DoxyCode}
+
+
+Then explore the world with the \href{http://wiki.ros.org/teleop_twist_keyboard}{\texttt{ {\ttfamily teleop\+\_\+twist\+\_\+keyboard}}} or with the already launched \href{https://wiki.ros.org/rqt_robot_steering}{\texttt{ {\ttfamily rqt\+\_\+robot\+\_\+steering}}} G\+UI plugin\+:
+
+\href{https://youtu.be/gLlo5V-BZu0}{\texttt{ }}
+
+When you finished exploring the new world, use the \href{http://wiki.ros.org/map_server\#map_saver}{\texttt{ {\ttfamily map\+\_\+saver}}} node from the \href{http://wiki.ros.org/map_server}{\texttt{ {\ttfamily map\+\_\+server}}} package to store the mapped enviornment\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun map\_server map\_saver -\/f \string~/map}
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md31}{}\doxysubsection{R\+Viz}\label{md_README_autotoc_md31}
+View just the {\ttfamily diffbot\+\_\+description} in R\+Viz.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_description view\_diffbot.launch}
+\end{DoxyCode}
+
+
+\hypertarget{md_README_autotoc_md32}{}\doxysubsection{Navigating and Mapping on the real Robot}\label{md_README_autotoc_md32}
+The following video shows how to map a new environment and navigate in it
+
+\href{https://youtu.be/IcYkQyzUqik}{\texttt{ }}
+
+Start by setting up the R\+OS Network, by making the development PC the rosmaster (set the {\ttfamily R\+O\+S\+\_\+\+M\+A\+S\+T\+E\+R\+\_\+\+U\+RI} environment variable accordingly, see \href{https://ros-mobile-robots.com/ros-network-setup/}{\texttt{ R\+OS Network Setup}} for more details), Then follow the steps listed below to run the real Diffbot or Remo robot hardware\+:
+
+
+\begin{DoxyEnumerate}
+\item First, brinup the robot hardware including its laser with the following launch file from the \href{./diffbot_bringup}{\texttt{ {\ttfamily diffbot\+\_\+bringup}}} package. Make sure to run this on the real robot (e.\+g. connect to it via {\ttfamily ssh})\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_bringup bringup\_with\_laser.launch}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Then, in a new terminal on your remote/work development machine (not the single board computer) run the slam gmapping with the same command as in the simulation\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_slam diffbot\_slam.launch slam\_method:=gmapping}
+\end{DoxyCode}
+
+
+As you can see in the video, this should open up R\+Viz and the \href{http://wiki.ros.org/rqt_robot_steering}{\texttt{ {\ttfamily rqt\+\_\+robot\+\_\+steering}}} plugin.
+
+
+\begin{DoxyEnumerate}
+\item Next, steer the robot around manually either using the {\ttfamily keyboard\+\_\+teleop} node or using the {\ttfamily rqt\+\_\+robot\+\_\+steering} node and save the map with the following command when you are done exploring\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{rosrun map\_server map\_saver -\/f office}
+\end{DoxyCode}
+
+
+After the mapping process it is possible to use the created map for navigation, after running the following launch files\+:
+
+
+\begin{DoxyEnumerate}
+\item On the single board computer (e.\+g. Raspberry Pi) make sure that the following is launched\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_bringup bringup\_with\_laser.launch}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Then on the work/remote development machine run the {\ttfamily diffbot\+\_\+hw.\+lauch} from the {\ttfamily diffbot\+\_\+navigation} package\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{roslaunch diffbot\_navigation diffbot\_hw.lauch}
+\end{DoxyCode}
+
+
+Among other essential navigation and map server nodes, this will also launch an instance of R\+Viz on your work pc where you can use its tools to\+:
+
+
+\begin{DoxyEnumerate}
+\item Localize the robot with the \char`\"{}2\+D Pose Estimate\char`\"{} tool (green arrow) in R\+Viz
+\item Use the \char`\"{}2\+D Nav Goal\char`\"{} tool in R\+Viz (red arrow) to send goals to the robot
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md33}{}\doxysection{\+:construction\+: Future Work}\label{md_README_autotoc_md33}
+Contributions to these tasks are welcome, see also the \href{./README.md\#contributions}{\texttt{ contribution section}} below.\hypertarget{md_README_autotoc_md34}{}\doxysubsection{R\+O\+S 2}\label{md_README_autotoc_md34}
+
+\begin{DoxyItemize}
+\item Migrate from R\+OS 1 to R\+OS 2
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md35}{}\doxysubsection{Drivers, Odometry and Hardware Interface}\label{md_README_autotoc_md35}
+
+\begin{DoxyItemize}
+\item Add {\ttfamily diffbot\+\_\+driver} package for ultrasonic ranger, imu and motor driver node code.
+\item Make use of the imu odometry data to improve the encoder odometry using a Kalman filter, such as \href{https://github.com/cra-ros-pkg/robot_localization}{\texttt{ {\ttfamily robot\+\_\+localization}}} (or the less active \href{http://wiki.ros.org/robot_pose_ekf}{\texttt{ {\ttfamily robot\+\_\+pose\+\_\+ekf}}}).
+\item The current implementation of the R\+OS Control {\ttfamily hardware\+\_\+interface\+::\+Robot\+HW} uses a high level P\+ID controller. This is working but also test a low level P\+ID on the Teensy 3.\+2 mcu using the \href{https://github.com/Seeed-Studio/Grove_I2C_Motor_Driver_v1_3}{\texttt{ Arduino library of the Grove i2c motor driver}}. -\/$>$ This is partly implemented (see {\ttfamily diffbot\+\_\+base/scripts/base\+\_\+controller}) Also replace {\ttfamily Wire.\+h} with the improved \href{https://github.com/nox771/i2c_t3}{\texttt{ {\ttfamily i2c\+\_\+t3}}} library.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md36}{}\doxysubsection{Navigation}\label{md_README_autotoc_md36}
+
+\begin{DoxyItemize}
+\item Test different global and local planners and add documentation
+\item Add {\ttfamily diffbot\+\_\+mbf} package using \href{http://wiki.ros.org/move_base_flex}{\texttt{ {\ttfamily move\+\_\+base\+\_\+flex}}}, the improved version of \href{http://wiki.ros.org/move_base}{\texttt{ {\ttfamily move\+\_\+base}}}.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md37}{}\doxysubsection{Perception}\label{md_README_autotoc_md37}
+To enable object detection or semantic segmentation with the R\+Pi Camera the Raspberry Pi 4 B will be upated with a Google Coral U\+SB Accelerator. Possible useful packages\+:
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/mseg-dataset/mseg-semantic}{\texttt{ M\+Seg}}
+\end{DoxyItemize}
+
+\hypertarget{md_README_autotoc_md38}{}\doxysubsection{Teleoperation}\label{md_README_autotoc_md38}
+
+\begin{DoxyItemize}
+\item Use the generic \href{http://wiki.ros.org/teleop_twist_keyboard}{\texttt{ {\ttfamily teleop\+\_\+twist\+\_\+keyboard}}} and/or \href{http://wiki.ros.org/teleop_twist_joy}{\texttt{ {\ttfamily teleop\+\_\+twist\+\_\+joy}}} package to drive the real robot and in simulation.
+\item Playstation controller
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md39}{}\doxysubsection{Tooling}\label{md_README_autotoc_md39}
+
+\begin{DoxyItemize}
+\item Use \href{https://clang.llvm.org/docs/ClangFormat.html}{\texttt{ clang format}} together with \href{https://github.com/PickNikRobotics/roscpp_code_format}{\texttt{ {\ttfamily .clang-\/format}}} file for {\ttfamily roscpp} to comply with \href{http://wiki.ros.org/CppStyleGuide}{\texttt{ R\+OS C++ Style Guidelines}}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md40}{}\doxysection{Part List Diffbot}\label{md_README_autotoc_md40}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+BC R\+Pi 4B }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+CU Teensy 3.\+2 }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ I\+MU Bosch  }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ S\+BC R\+Pi 4B }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ M\+CU Teensy 3.\+2 }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ I\+MU Bosch  }\\\cline{1-3}
+\endhead
+\PBS\centering \href{https://ros-mobile-robots.com/}{\texttt{ }} &\PBS\centering \href{https://github.com/ros-mobile-robots/diffbot}{\texttt{ }} &\PBS\centering \href{https://github.com/ros-mobile-robots/diffbot}{\texttt{ }}  \\\cline{1-3}
+\end{longtabu}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Part }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Store  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Part }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Store  }\\\cline{1-2}
+\endhead
+Raspberry Pi 4 B (4 Gb) &\PBS\centering \href{https://amzn.to/3ltuJUo}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/2IchIAc}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+San\+Disk 64 GB SD Card Class 10 &\PBS\centering \href{https://amzn.to/2GLOyr0}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/3dcFmYE}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Robot Smart Chassis Kit &\PBS\centering \href{https://amzn.to/34GXNAK}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/2Gy3CJ4}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+S\+L\+A\+M\+T\+EC R\+P\+Lidar A2\+M8 (12 m) &\PBS\centering \href{https://amzn.to/3lthTFz}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/30MyImR}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Grove Ultrasonic Ranger &\PBS\centering \href{https://amzn.to/36M9TLS}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/34GZmyC}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Raspi Camera Module V2, 8 MP, 1080p &\PBS\centering \href{https://amzn.to/2Ib9fgG}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/2FdVDQF}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Grove Motor Driver &\PBS\centering \href{https://www.seeedstudio.com/Grove-I2C-Motor-Driver-with-L298.html}{\texttt{ seeedstudio.\+com}}, \href{https://amzn.to/36M8O6M}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+I2C Hub &\PBS\centering \href{https://www.seeedstudio.com/Grove-I2C-Hub.html}{\texttt{ seeedstudio.\+com}}, \href{https://amzn.to/34CGEbz}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Teensy 4.\+0 or 3.\+2 &\PBS\centering \href{https://www.pjrc.com/store/teensy40.html}{\texttt{ P\+J\+RC Teensy 4.\+0}}, \href{https://www.pjrc.com/store/teensy32.html}{\texttt{ P\+J\+RC Teensy 3.\+2}}  \\\cline{1-2}
+Hobby Motor with Encoder -\/ Metal Gear (D\+G01\+D-\/E) &\PBS\centering \href{https://www.sparkfun.com/products/16413}{\texttt{ Sparkfun}}  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md41}{}\doxysection{Part List Remo}\label{md_README_autotoc_md41}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Part }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Store  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Part }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Store  }\\\cline{1-2}
+\endhead
+Raspberry Pi 4 B (4 Gb) &\PBS\centering \href{https://amzn.to/3ltuJUo}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/2IchIAc}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+San\+Disk 64 GB SD Card Class 10 &\PBS\centering \href{https://amzn.to/2GLOyr0}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/3dcFmYE}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Remo Base &\PBS\centering 3D printable, see \href{https://github.com/ros-mobile-robots/remo_description}{\texttt{ {\ttfamily remo\+\_\+description}}}  \\\cline{1-2}
+S\+L\+A\+M\+T\+EC R\+P\+Lidar A2\+M8 (12 m) &\PBS\centering \href{https://amzn.to/3lthTFz}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/30MyImR}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Raspi Camera Module V2, 8 MP, 1080p &\PBS\centering \href{https://amzn.to/2Ib9fgG}{\texttt{ Amazon.\+com}}, \href{https://amzn.to/2FdVDQF}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Adafruit DC Motor (+ Stepper) Feather\+Wing &\PBS\centering \href{https://www.adafruit.com/product/2927}{\texttt{ adafruit.\+com}}, \href{https://amzn.to/3km5KF3}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+Teensy 4.\+0 or 3.\+2 &\PBS\centering \href{https://www.pjrc.com/store/teensy40.html}{\texttt{ P\+J\+RC Teensy 4.\+0}}, \href{https://www.pjrc.com/store/teensy32.html}{\texttt{ P\+J\+RC Teensy 3.\+2}}  \\\cline{1-2}
+Hobby Motor with Encoder -\/ Metal Gear (D\+G01\+D-\/E) &\PBS\centering \href{https://www.sparkfun.com/products/16413}{\texttt{ Sparkfun}}  \\\cline{1-2}
+Powerbank (e.\+g 15000 m\+Ah) &\PBS\centering \href{https://amzn.to/3kmkx2t}{\texttt{ Amazon.\+de}} This Powerbank from Goobay is close to the maximum possible size Lx\+WxH\+: 135.\+5x70x18 mm)  \\\cline{1-2}
+Battery pack (for four or eight batteries) &\PBS\centering \href{https://amzn.to/3kiX8PH}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md42}{}\doxysection{Additional (\+Optional) Equipment}\label{md_README_autotoc_md42}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Part }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Store  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Part }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Store  }\\\cline{1-2}
+\endhead
+Pico\+Scope 3000 Series Oscilloscope 2CH &\PBS\centering \href{https://amzn.to/33I5tUb}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+V\+O\+L\+T\+C\+R\+A\+FT P\+P\+S-\/16005 &\PBS\centering \href{https://amzn.to/3iKsI4a}{\texttt{ Amazon.\+de}}  \\\cline{1-2}
+3D Printer for Remo\textquotesingle{}s parts &\PBS\centering \href{https://shop.prusa3d.com/en/17-3d-printers}{\texttt{ Prusa}}, \href{https://ultimaker.com/}{\texttt{ Ultimaker}}, etc. or use a local print service or an online one such as \href{https://www.sculpteo.com/}{\texttt{ Sculpteo}}  \\\cline{1-2}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md43}{}\doxysection{Hardware Architecture and Wiring}\label{md_README_autotoc_md43}
+$<$details$>$
+
+
+
+$<$/details$>$
+
+$<$details open$>$
+
+{\bfseries{Remo}} 
+
+
+
+$<$/details$>$\hypertarget{md_README_autotoc_md44}{}\doxysection{\+:handshake\+: Acknowledgment}\label{md_README_autotoc_md44}
+
+\begin{DoxyItemize}
+\item \href{https://louisrapine.com/}{\texttt{ Louis Morandy-\/\+Rapiné}} for his great work on \href{https://github.com/ros-mobile-robots/remo_description}{\texttt{ R\+E\+MO robot}} and designing it in \href{https://www.autodesk.com/products/fusion-360/overview}{\texttt{ Fusion 360}}.
+\item \href{https://lentinjoseph.com/}{\texttt{ Lentin Joseph}} and the participants of \href{https://robocademy.com/2020/06/25/enroll-in-robot-operating-system-learning-path-by-lentin-joseph/}{\texttt{ R\+OS Developer Learning Path}}
+\item The configurable {\ttfamily diffbot\+\_\+description} using yaml files (see \href{http://wiki.ros.org/xacro\#YAML_support}{\texttt{ R\+OS Wiki on xacro}}) is part of \href{https://github.com/pxalcantara/mobile_robot_description}{\texttt{ {\ttfamily mobile\+\_\+robot\+\_\+description}}} from \href{https://github.com/pxalcantara}{\texttt{ @pxalcantara}}.
+\item Thanks to \href{https://github.com/NestorDP}{\texttt{ @\+Nestor\+DP}} for help with the meshes (similar to \href{https://github.com/NestorDP/littlebot}{\texttt{ {\ttfamily littlebot}}}), see also \href{https://github.com/fjp/diffbot/issues/1}{\texttt{ issue \#1}}
+\item \href{https://github.com/dfki-ric/mir_robot}{\texttt{ {\ttfamily dfki-\/ric/mir\+\_\+robot}}}
+\item \href{https://github.com/eborghi10/my_ROS_mobile_robot}{\texttt{ {\ttfamily eborghi10/my\+\_\+\+R\+O\+S\+\_\+mobile\+\_\+robot}}}
+\item \href{https://github.com/husky/husky}{\texttt{ {\ttfamily husky}}}
+\item \href{https://github.com/ROBOTIS-GIT/turtlebot3}{\texttt{ turtlebot3}}
+\item \href{https://github.com/linorobot/linorobot}{\texttt{ Linorobot}}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md45}{}\doxysection{\+:wrench\+: Contributing}\label{md_README_autotoc_md45}
+Your contributions are most welcome. These can be in the form of raising issues, creating P\+Rs to correct or add documentation and of course solving existing issues or adding new features.\hypertarget{md_README_autotoc_md46}{}\doxysection{\+:pencil\+: License}\label{md_README_autotoc_md46}
+{\ttfamily diffbot} is licenses under the \href{./LICENSE}{\texttt{ B\+SD 3-\/Clause}}. See also \mbox{\hyperlink{md_open-source-license-acknowledgements-and-third-party-copyrights}{open-\/source-\/license-\/acknowledgements-\/and-\/third-\/party-\/copyrights.md}}. The \href{https://ros-mobile-robots.com/}{\texttt{ documentation}} is licensed differently, visit its \href{https://github.com/ros-mobile-robots/ros-mobile-robots.github.io\#license}{\texttt{ license text}} to learn more. 
